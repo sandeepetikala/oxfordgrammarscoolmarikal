@@ -6,6 +6,7 @@ import { useSite } from "@/lib/site-content";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import DocTitle from "@/components/DocTitle";
+import { SHOW_CBSE } from "@/lib/config";
 
 const VALUES = [
   { t: "Curiosity", d: "We protect the instinct to ask 'why' — the engine of every great learner." },
@@ -15,7 +16,7 @@ const VALUES = [
 ];
 
 const TIMELINE = [
-  { y: "2024", t: "Our beginning", d: "Oxford Grammar School opens in Marikal with a CBSE curriculum and one promise: strive for excellence, shine with confidence." },
+  { y: "2024", t: "Our beginning", d: `Oxford Grammar School opens in Marikal with a ${SHOW_CBSE ? "CBSE curriculum" : "modern curriculum"} and one promise: strive for excellence, shine with confidence.` },
   { y: "2024", t: "Modern facilities", d: "Science, biology, maths and computer labs, a well-stocked library and smart classrooms come to life." },
   { y: "Today", t: "Growing strong", d: "A young, energetic school giving every child in Marikal a caring, future-ready education." },
 ];
@@ -28,7 +29,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="A school built on belief, not pressure."
-        subtitle={`Since ${c["school.estd"]}, ${c["school.name"]} has given children in Marikal a caring, future-ready CBSE education — by holding on to one idea.`}
+        subtitle={`Since ${c["school.estd"]}, ${c["school.name"]} has given children in Marikal a caring, future-ready ${SHOW_CBSE ? "CBSE education" : "education"} — by holding on to one idea.`}
         image={c["about.image"]}
       />
 

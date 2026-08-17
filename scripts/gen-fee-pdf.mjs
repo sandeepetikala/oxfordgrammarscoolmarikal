@@ -39,7 +39,8 @@ doc.pipe(fs.createWriteStream("public/fee-structure-2026-27.pdf"));
 // ---- Header ----
 try { doc.image("public/logo.png", left, 42, { width: 62, height: 62 }); } catch { /* no logo */ }
 doc.fillColor(NAVY).font("Helvetica-Bold").fontSize(21).text("Oxford Grammar School", left + 74, 46);
-doc.fillColor(GOLD).font("Helvetica-Bold").fontSize(9.5).text("CBSE  ·  MARIKAL, NARAYANPET  ·  TELANGANA", left + 74, 73);
+// NOTE: prefix "CBSE  ·  " here again once affiliation is approved (matches SHOW_CBSE in src/lib/config.ts).
+doc.fillColor(GOLD).font("Helvetica-Bold").fontSize(9.5).text("MARIKAL, NARAYANPET  ·  TELANGANA", left + 74, 73);
 doc.fillColor(MUTE).font("Helvetica").fontSize(9).text("Raichur Road, Marikal (V & M), Narayanpet District, Telangana 509351", left + 74, 88);
 doc.fillColor(MUTE).fontSize(9).text("Phone: +91 94905 02838, +91 95533 40707", left + 74, 100);
 

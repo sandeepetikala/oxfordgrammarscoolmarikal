@@ -3,6 +3,7 @@
 import { useSite } from "@/lib/site-content";
 import PageHero from "@/components/PageHero";
 import DocTitle from "@/components/DocTitle";
+import { SHOW_CBSE } from "@/lib/config";
 
 function Row({ label, value }: { label: string; value?: string }) {
   return (
@@ -49,9 +50,9 @@ export default function DisclosurePage() {
     <>
       <DocTitle text="Mandatory Public Disclosure" />
       <PageHero
-        eyebrow="Statutory · CBSE Affiliation Bylaws"
+        eyebrow={SHOW_CBSE ? "Statutory · CBSE Affiliation Bylaws" : "Statutory · Public Disclosure"}
         title="Mandatory Public Disclosure"
-        subtitle="Published in compliance with the CBSE Affiliation Bylaws. Updated by the school administration."
+        subtitle={SHOW_CBSE ? "Published in compliance with the CBSE Affiliation Bylaws. Updated by the school administration." : "Published in the interest of transparency. Updated by the school administration."}
       />
 
       <section className="section bg-white">
@@ -142,7 +143,7 @@ export default function DisclosurePage() {
               </>
             ) : (
               <p className="rounded-xl border border-gold/30 bg-gold-soft/50 px-4 py-3 text-sm text-ink/80">
-                Oxford Grammar School was established in {c["school.estd"]}. The first batch of students is yet to appear for the CBSE board examinations, so board results will be published here in due course.
+                Oxford Grammar School was established in {c["school.estd"]}. The first batch of students is yet to appear for the {SHOW_CBSE ? "CBSE board examinations" : "board examinations"}, so board results will be published here in due course.
               </p>
             )}
             <div className={`mt-6 ${tableWrap}`}>
@@ -199,7 +200,7 @@ export default function DisclosurePage() {
           </div>
 
           <p className="rounded-xl border border-gold/30 bg-gold-soft/50 p-4 text-xs text-ink/70">
-            This disclosure is maintained as per the CBSE Affiliation Bylaws. For any clarification or to obtain
+            This disclosure is maintained {SHOW_CBSE ? "as per the CBSE Affiliation Bylaws" : "in the interest of transparency"}. For any clarification or to obtain
             certified copies of the listed documents, please contact the school office at {c["disc.phone"]} or {c["disc.email"]}.
           </p>
         </div>

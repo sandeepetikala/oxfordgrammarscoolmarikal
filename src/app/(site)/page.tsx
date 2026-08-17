@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useSite } from "@/lib/site-content";
 import Reveal from "@/components/Reveal";
 import EnquiryForm from "@/components/EnquiryForm";
+import { SHOW_CBSE } from "@/lib/config";
 
 const PILLARS = [
   { icon: "🧑‍🏫", tint: "bg-coral-soft", grad: "from-coral-soft/70", t: "Teachers who believe", d: "Mentors who know every child by name — and never let a single one slip through." },
@@ -104,8 +105,8 @@ export default function HomePage() {
             <div className="absolute -left-4 bottom-10 flex animate-float items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 shadow-card backdrop-blur">
               <span className="grid h-10 w-10 place-items-center rounded-xl bg-leaf-soft text-lg">🎓</span>
               <div>
-                <div className="text-sm font-bold text-ink">CBSE Affiliated</div>
-                <div className="text-xs text-ink/50">Established {c["school.estd"]}</div>
+                <div className="text-sm font-bold text-ink">{SHOW_CBSE ? "CBSE Affiliated" : `Established ${c["school.estd"]}`}</div>
+                <div className="text-xs text-ink/50">{SHOW_CBSE ? `Established ${c["school.estd"]}` : "Marikal, Telangana"}</div>
               </div>
             </div>
             <div className="absolute -right-3 top-8 rotate-3 animate-float rounded-full bg-coral px-4 py-2 text-xs font-bold text-white shadow-card" style={{ animationDelay: "1.5s" }}>
@@ -119,7 +120,7 @@ export default function HomePage() {
           <div className="flex w-max animate-marquee gap-10 whitespace-nowrap text-sm font-medium uppercase tracking-wider">
             {Array.from({ length: 2 }).map((_, i) => (
               <span key={i} className="flex items-center gap-10">
-                <span>CBSE Affiliated</span><span className="text-gold">✦</span>
+                {SHOW_CBSE && <><span>CBSE Affiliated</span><span className="text-gold">✦</span></>}
                 <span>Established {c["school.estd"]}</span><span className="text-gold">✦</span>
                 <span>Marikal · Narayanpet</span><span className="text-gold">✦</span>
                 <span>Science · Maths · Computer Labs</span><span className="text-gold">✦</span>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useSite } from "@/lib/site-content";
+import { SHOW_CBSE } from "@/lib/config";
 
 export default function SiteFooter() {
   const { content: c } = useSite();
@@ -12,7 +13,7 @@ export default function SiteFooter() {
         <div>
           <div className="font-display text-2xl font-semibold text-cream">{c["school.name"]}</div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream/60">
-            {c["school.tagline"]} A CBSE-affiliated school nurturing future-ready minds since {c["school.estd"]}.
+            {c["school.tagline"]} {SHOW_CBSE ? "A CBSE-affiliated school" : "A school"} nurturing future-ready minds since {c["school.estd"]}.
           </p>
           <p className="mt-4 text-xs uppercase tracking-[0.2em] text-gold">{c["school.affiliation"]}</p>
         </div>
@@ -55,7 +56,7 @@ export default function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col items-center justify-between gap-3 py-5 text-xs text-cream/50 sm:flex-row">
           <span>© {year} {c["school.name"]}. All rights reserved.</span>
-          <span className="text-cream/40">CBSE Affiliated · Marikal</span>
+          <span className="text-cream/40">{SHOW_CBSE ? "CBSE Affiliated · Marikal" : "Marikal, Telangana"}</span>
         </div>
       </div>
     </footer>

@@ -3,6 +3,7 @@ import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/seo";
 import CanonicalRedirect from "@/components/CanonicalRedirect";
+import { SHOW_CBSE } from "@/lib/config";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -21,12 +22,17 @@ const sans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Oxford Grammar School — CBSE School in Marikal, Telangana",
+    default: SHOW_CBSE
+      ? "Oxford Grammar School — CBSE School in Marikal, Telangana"
+      : "Oxford Grammar School — School in Marikal, Telangana",
     template: "%s · Oxford Grammar School",
   },
-  description:
-    "Oxford Grammar School, Marikal — a CBSE-affiliated school nurturing curious, confident, future-ready children. Admissions open for 2026–27.",
-  keywords: ["Oxford Grammar School", "Oxford Grammar School Marikal", "CBSE school Marikal", "school in Marikal", "Marikal Telangana school", "CBSE admissions Marikal"],
+  description: SHOW_CBSE
+    ? "Oxford Grammar School, Marikal — a CBSE-affiliated school nurturing curious, confident, future-ready children. Admissions open for 2026–27."
+    : "Oxford Grammar School, Marikal — a school nurturing curious, confident, future-ready children. Admissions open for 2026–27.",
+  keywords: SHOW_CBSE
+    ? ["Oxford Grammar School", "Oxford Grammar School Marikal", "CBSE school Marikal", "school in Marikal", "Marikal Telangana school", "CBSE admissions Marikal"]
+    : ["Oxford Grammar School", "Oxford Grammar School Marikal", "school in Marikal", "Marikal Telangana school", "admissions Marikal"],
   icons: {
     icon: [{ url: "/logo.png", type: "image/png" }],
     shortcut: "/logo.png",
@@ -34,8 +40,10 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Oxford Grammar School — CBSE, Marikal",
-    description: "Future-ready CBSE education in Marikal, Telangana. Admissions open 2026–27.",
+    title: SHOW_CBSE ? "Oxford Grammar School — CBSE, Marikal" : "Oxford Grammar School — Marikal",
+    description: SHOW_CBSE
+      ? "Future-ready CBSE education in Marikal, Telangana. Admissions open 2026–27."
+      : "Future-ready education in Marikal, Telangana. Admissions open 2026–27.",
     url: SITE_URL,
     siteName: "Oxford Grammar School",
     type: "website",
@@ -49,7 +57,7 @@ const jsonLd = {
   alternateName: "Oxford Grammar School Marikal",
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
-  description: "A CBSE-affiliated school in Marikal, Telangana.",
+  description: SHOW_CBSE ? "A CBSE-affiliated school in Marikal, Telangana." : "A school in Marikal, Telangana.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Marikal",

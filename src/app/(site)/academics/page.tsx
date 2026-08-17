@@ -5,6 +5,7 @@ import { useSite } from "@/lib/site-content";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import DocTitle from "@/components/DocTitle";
+import { SHOW_CBSE } from "@/lib/config";
 
 const WINGS = [
   {
@@ -28,7 +29,7 @@ const WINGS = [
 ];
 
 const FACILITIES = [
-  ["Science, Maths & Computer Labs", "Well-equipped labs for hands-on science, maths and computer learning, as per CBSE norms."],
+  ["Science, Maths & Computer Labs", `Well-equipped labs for hands-on science, maths and computer learning${SHOW_CBSE ? ", as per CBSE norms" : ""}.`],
   ["Library", "A growing library of storybooks, references, encyclopaedias and periodicals."],
   ["Smart Classrooms", "Interactive digital panels for blended, engaging learning."],
   ["IIT Foundation", "An early foundation for competitive exams from Grade 6 onwards."],
@@ -45,7 +46,7 @@ export default function AcademicsPage() {
       <PageHero
         eyebrow="Academics"
         title="Deep learning, joyfully delivered."
-        subtitle="A CBSE curriculum that balances rigour with creativity — so students leave us curious, confident and college-ready."
+        subtitle={`${SHOW_CBSE ? "A CBSE curriculum" : "A curriculum"} that balances rigour with creativity — so students leave us curious, confident and college-ready.`}
         image={heroImg}
       />
 

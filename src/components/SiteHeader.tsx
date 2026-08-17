@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSite } from "@/lib/site-content";
+import { SHOW_CBSE } from "@/lib/config";
 
 const LINKS = [
   { href: "/about", label: "About" },
@@ -15,7 +16,7 @@ const LINKS = [
   { href: "/contact", label: "Contact" },
 ];
 
-export default function SiteHeader({ subtitle = "CBSE · Marikal" }: { subtitle?: string }) {
+export default function SiteHeader({ subtitle = SHOW_CBSE ? "CBSE · Marikal" : "Marikal, Telangana" }: { subtitle?: string }) {
   const { content } = useSite();
   const schoolName = content["school.name"] || "Oxford Grammar School";
   const [scrolled, setScrolled] = useState(false);

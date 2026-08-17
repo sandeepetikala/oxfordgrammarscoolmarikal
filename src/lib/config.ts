@@ -21,3 +21,16 @@ export const CONTENT_SOURCE: ContentSource =
   (process.env.NEXT_PUBLIC_CONTENT_SOURCE as ContentSource) === "server"
     ? "server"
     : "local";
+
+// ─────────────────────────────────────────────────────────────
+// Show/hide "CBSE" wording across the whole site.
+//
+//   false → every "CBSE" mention is hidden (no text is deleted — just not shown),
+//           so alignment stays intact. Use this until affiliation is approved.
+//   true  → all CBSE wording reappears exactly as before.
+//
+// AFTER APPROVAL: change this to `true`, then rebuild + deploy. That's it.
+// (Note: the "CBSE" text baked into the logo image /logo.png and the school's
+//  own uploaded photos is NOT controlled here — those are images.)
+// ─────────────────────────────────────────────────────────────
+export const SHOW_CBSE = false;
