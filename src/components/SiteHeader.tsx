@@ -12,7 +12,7 @@ const LINKS = [
   { href: "/academics", label: "Academics" },
   { href: "/gallery", label: "Gallery" },
   { href: "/faculty", label: "Faculty" },
-  { href: "/disclosure", label: "Disclosure" },
+  { href: "/disclosure", label: "Mandatory Public Disclosure" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -53,12 +53,12 @@ export default function SiteHeader({ subtitle = SHOW_CBSE ? "CBSE · Marikal" : 
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-6 xl:flex">
           {LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`text-sm font-medium transition-colors hover:text-gold ${
+              className={`whitespace-nowrap text-sm font-medium transition-colors hover:text-gold ${
                 pathname === l.href ? "text-gold" : "text-ink/70"
               }`}
             >
@@ -72,7 +72,7 @@ export default function SiteHeader({ subtitle = SHOW_CBSE ? "CBSE · Marikal" : 
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="grid h-11 w-11 place-items-center rounded-lg border border-ink/15 transition-colors lg:hidden"
+          className="grid h-11 w-11 place-items-center rounded-lg border border-ink/15 transition-colors xl:hidden"
           aria-label="Menu"
         >
           <span className="space-y-1.5">
@@ -84,7 +84,7 @@ export default function SiteHeader({ subtitle = SHOW_CBSE ? "CBSE · Marikal" : 
       </div>
 
       {open && (
-        <div className="border-t border-ink/10 bg-white/95 backdrop-blur lg:hidden">
+        <div className="border-t border-ink/10 bg-white/95 backdrop-blur xl:hidden">
           <nav className="container-x flex flex-col py-4">
             {LINKS.map((l) => (
               <Link key={l.href} href={l.href} className="border-b border-ink/5 py-3 text-ink/80">
