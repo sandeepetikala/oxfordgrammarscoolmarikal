@@ -23,12 +23,12 @@ const JOURNEY = [
 ];
 
 const HIGHLIGHTS = [
-  { icon: "🔬", label: "Science Labs", grad: "from-leaf-soft" },
-  { icon: "💻", label: "Computer Lab", grad: "from-sky" },
-  { icon: "📚", label: "Library", grad: "from-amber-soft" },
-  { icon: "🎯", label: "IIT Foundation", grad: "from-coral-soft" },
-  { icon: "🖥️", label: "Smart Classrooms", grad: "from-mint" },
-  { icon: "🛡️", label: "Safe Campus", grad: "from-gold-soft" },
+  { icon: "🔬", label: "Science Labs", grad: "from-leaf-soft", href: "/gallery/?category=Labs" },
+  { icon: "💻", label: "Computer Lab", grad: "from-sky", href: "/gallery/?category=Labs" },
+  { icon: "📚", label: "Library", grad: "from-amber-soft", href: "/gallery/?category=Library" },
+  { icon: "🎯", label: "IIT Foundation", grad: "from-coral-soft", href: "/academics" },
+  { icon: "🖥️", label: "Smart Classrooms", grad: "from-mint", href: "/gallery/?category=Classrooms" },
+  { icon: "🛡️", label: "Safe Campus", grad: "from-gold-soft", href: "/about" },
 ];
 
 const MOMENTS = [
@@ -138,10 +138,10 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {HIGHLIGHTS.map((h, i) => (
               <Reveal key={h.label} delay={(i % 6) * 0.05}>
-                <div className={`flex h-full flex-col items-center gap-2 rounded-2xl border border-ink/10 bg-gradient-to-br ${h.grad} to-white p-4 text-center shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-card`}>
+                <Link href={h.href} className={`group flex h-full flex-col items-center gap-2 rounded-2xl border border-ink/10 bg-gradient-to-br ${h.grad} to-white p-4 text-center shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-card`}>
                   <span className="text-3xl transition group-hover:scale-110">{h.icon}</span>
                   <span className="text-sm font-bold text-ink">{h.label}</span>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
