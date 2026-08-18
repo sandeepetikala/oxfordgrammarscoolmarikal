@@ -21,7 +21,7 @@
     "about.title": "Strive for excellence. Shine with confidence.",
     "about.body1": "Founded in 2024, Oxford Grammar School is a CBSE school in Marikal, Narayanpet district — built on one belief: every child is extraordinary when someone truly believes in them.",
     "about.body2": "Our classrooms blend academics with art, sport and real-world learning — with modern science, maths and computer labs, a growing library and smart classrooms — so students grow curious, kind and confident.",
-    "about.image": "/uploads/school.JPG",
+    "about.image": "/uploads/schoolimage.jpg",
     "principal.name": "Suvarna Raju N",
     "principal.message": "At Oxford Grammar School, we strive for excellence and help every child shine with confidence. Our dedicated teachers nurture curious, kind and capable young people ready for the world ahead.",
     "principal.photo": "/principal.jpeg",
@@ -66,7 +66,7 @@
       "id": "g1",
       "title": "Our Campus",
       "category": "Campus",
-      "url": "/uploads/school.JPG",
+      "url": "/uploads/schoolimage.jpg",
       "sort": 0
     },
     {
