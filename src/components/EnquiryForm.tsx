@@ -23,8 +23,12 @@ export default function EnquiryForm({
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
 
+    // Support one OR several Web3Forms keys (comma/semicolon/space separated),
+    // so each enquiry can be emailed to more than one inbox.
+    const keys = accessKey.split(/[\s,;]+/).map((k) => k.trim()).filter(Boolean);
+
     // No Web3Forms key configured → fall back to a mailto: link.
-    if (!accessKey) {
+    if (keys.length === 0) {
       const subject = encodeURIComponent("Admission enquiry — website");
       const body = encodeURIComponent(
         `Name: ${data.name || ""}\nPhone: ${data.phone || ""}\nEmail: ${data.email || ""}\nGrade: ${data.grade || ""}\n\n${data.message || ""}`
@@ -36,18 +40,23 @@ export default function EnquiryForm({
 
     setStatus("loading");
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: "New admission enquiry — Oxford Grammar School",
-          from_name: "Oxford Grammar School Website",
-          replyto: data.email || undefined,
-          ...data,
-        }),
-      });
-      if (!res.ok) throw new Error();
+      const payload = {
+        subject: "New admission enquiry — Oxford Grammar School",
+        from_name: "Oxford Grammar School Website",
+        replyto: data.email || undefined,
+        ...data,
+      };
+      const results = await Promise.allSettled(
+        keys.map((key) =>
+          fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({ access_key: key, ...payload }),
+          })
+        )
+      );
+      const anyOk = results.some((r) => r.status === "fulfilled" && r.value.ok);
+      if (!anyOk) throw new Error();
       setStatus("done");
       form.reset();
     } catch {
