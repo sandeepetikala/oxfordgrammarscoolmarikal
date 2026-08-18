@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSite } from "@/lib/site-content";
 import PageHero from "@/components/PageHero";
 import GalleryGrid from "@/components/GalleryGrid";
@@ -18,7 +19,9 @@ export default function GalleryPage() {
       <section className="section bg-cream">
         <div className="container-x">
           {images.length ? (
-            <GalleryGrid images={images} />
+            <Suspense fallback={null}>
+              <GalleryGrid images={images} />
+            </Suspense>
           ) : (
             <p className="text-ink/60">Photos coming soon.</p>
           )}

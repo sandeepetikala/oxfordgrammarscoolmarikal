@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 type Img = { id: string; title: string; category: string; url: string };
 
@@ -13,10 +14,12 @@ export default function GalleryGrid({ images }: { images: Img[] }) {
   const [active, setActive] = useState("All");
 
   // Honour a ?category=… deep link (e.g. from the homepage highlight tiles).
+  const searchParams = useSearchParams();
+  const wanted = searchParams.get("category");
   useEffect(() => {
-    const wanted = new URLSearchParams(window.location.search).get("category");
     if (wanted && categories.includes(wanted)) setActive(wanted);
-  }, [categories]);
+    else setActive("All");
+  }, [wanted, categories]);
   const shown = active === "All" ? images : images.filter((i) => i.category === active);
 
   return (
