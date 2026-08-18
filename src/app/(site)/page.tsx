@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useSite } from "@/lib/site-content";
 import Reveal from "@/components/Reveal";
 import EnquiryForm from "@/components/EnquiryForm";
+import ZoomImage from "@/components/ZoomImage";
 import { SHOW_CBSE } from "@/lib/config";
 
 const PILLARS = [
@@ -256,9 +257,9 @@ export default function HomePage() {
             {gallery.slice(0, 4).map((g, i) => (
               <Reveal key={g.id} delay={(i % 4) * 0.07}>
                 <figure className="group relative aspect-[3/4] overflow-hidden rounded-3xl shadow-soft ring-1 ring-ink/5 transition duration-300 hover:shadow-card">
-                  <Image src={g.url} alt={g.title} fill className="object-cover transition duration-700 group-hover:scale-110" sizes="(max-width:768px) 50vw, 25vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/15 to-transparent" />
-                  <figcaption className="absolute inset-x-0 bottom-0 p-4">
+                  <ZoomImage src={g.url} alt={g.title} wrapperClassName="absolute inset-0" imgClassName="h-full w-full object-cover" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/15 to-transparent" />
+                  <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-4">
                     <span className="chip bg-white/20 text-white backdrop-blur-sm">{g.category}</span>
                     <p className="mt-2 text-lg font-bold text-white">{g.title}</p>
                   </figcaption>
