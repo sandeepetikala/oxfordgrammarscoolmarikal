@@ -100,7 +100,7 @@ export default function DisclosurePage() {
                             Click here – View ↗
                           </a>
                         ) : (
-                          <span className="text-ink/60">{d.note || "Available on request"}</span>
+                          <span className="text-ink/60">{d.note}</span>
                         )}
                       </td>
                     </tr>

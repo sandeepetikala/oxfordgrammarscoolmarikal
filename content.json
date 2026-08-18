@@ -302,8 +302,8 @@
   "disclosureDocs": [
     {
       "label": "Copy of Affiliation / Upgradation Letter and recent extension of affiliation, if any",
-      "fileUrl": "/school-permission-copy.pdf",
-      "note": "School permission / recognition copy",
+      "fileUrl": null,
+      "note": "",
       "sort": 0
     },
     {
