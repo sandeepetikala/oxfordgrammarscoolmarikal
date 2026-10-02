@@ -12,25 +12,25 @@ const MUTE = "#666666";
 
 const left = 50, right = 545;
 const W = right - left;
-// column boundaries: Class | Admission | Tuition | IIT
-const colX = [50, 235, 340, 440, 545];
-const heads = ["Class", "Admission Fee", "Tuition Fee", "IIT Foundation"];
+// column boundaries: Class | Admission | Tuition
+const colX = [50, 245, 395, 545];
+const heads = ["Class", "Admission Fee", "Tuition Fee"];
 
 const DATA = [
   { group: "Pre-Primary" },
-  { c: "Nursery", a: "1,500", t: "22,000", iit: "—" },
-  { c: "LKG", a: "1,500", t: "23,000", iit: "—" },
-  { c: "UKG", a: "1,500", t: "24,000", iit: "—" },
+  { c: "Nursery", a: "1,500", t: "22,000" },
+  { c: "LKG", a: "1,500", t: "23,000" },
+  { c: "UKG", a: "1,500", t: "24,000" },
   { group: "Primary" },
-  { c: "Grade 1", a: "1,500", t: "25,000", iit: "—" },
-  { c: "Grade 2", a: "1,500", t: "28,000", iit: "—" },
-  { c: "Grade 3", a: "1,500", t: "31,000", iit: "—" },
-  { c: "Grade 4", a: "1,500", t: "34,000", iit: "—" },
-  { c: "Grade 5", a: "1,500", t: "37,000", iit: "—" },
+  { c: "Grade 1", a: "1,500", t: "25,000" },
+  { c: "Grade 2", a: "1,500", t: "28,000" },
+  { c: "Grade 3", a: "1,500", t: "31,000" },
+  { c: "Grade 4", a: "1,500", t: "34,000" },
+  { c: "Grade 5", a: "1,500", t: "37,000" },
   { group: "Middle School" },
-  { c: "Grade 6", a: "1,500", t: "41,000", iit: "15,000" },
-  { c: "Grade 7", a: "1,500", t: "45,000", iit: "15,000" },
-  { c: "Grade 8", a: "1,500", t: "50,000", iit: "15,000" },
+  { c: "Grade 6", a: "1,500", t: "41,000" },
+  { c: "Grade 7", a: "1,500", t: "45,000" },
+  { c: "Grade 8", a: "1,500", t: "50,000" },
 ];
 
 const doc = new PDFDocument({ size: "A4", margin: 50 });
@@ -85,7 +85,6 @@ for (const row of DATA) {
   cell(row.c, 0, y, { font: "Helvetica-Bold", color: NAVY });
   cell(row.a, 1, y, { align: "center", color: "#333" });
   cell(row.t, 2, y, { align: "center", color: "#333" });
-  cell(row.iit, 3, y, { align: "center", color: row.iit === "—" ? "#999" : "#12832f", font: row.iit === "—" ? "Helvetica" : "Helvetica-Bold" });
   borders(y, rh);
   y += rh;
   alt = !alt;
@@ -97,7 +96,6 @@ doc.fillColor(NAVY).font("Helvetica-Bold").fontSize(10).text("Notes", left, y);
 y += 16;
 const notes = [
   "Fees shown are for the academic year 2026-27 and are subject to revision by the school management.",
-  "IIT Foundation applies to Grades 6 to 8 only.",
   "Admission fee is a one-time payment at the time of admission.",
   "For any clarification, please contact the school office.",
 ];

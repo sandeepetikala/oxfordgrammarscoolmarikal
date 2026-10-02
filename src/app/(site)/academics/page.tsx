@@ -23,8 +23,8 @@ const WINGS = [
   {
     name: "Middle School",
     grade: "Grade 6 – 8",
-    desc: "Concepts deepen across science, maths and languages, with an IIT foundation.",
-    points: ["Lab-based science", "Maths & IIT foundation", "Computer education", "Sports & activities"],
+    desc: "Concepts deepen across science, maths and languages.",
+    points: ["Lab-based science", "Mathematics", "Computer education", "Sports & activities"],
   },
 ];
 
@@ -32,7 +32,6 @@ const FACILITIES = [
   ["Science, Maths & Computer Labs", `Well-equipped labs for hands-on science, maths and computer learning${SHOW_CBSE ? ", as per CBSE norms" : ""}.`],
   ["Library", "A growing library of storybooks, references, encyclopaedias and periodicals."],
   ["Smart Classrooms", "Interactive digital panels for blended, engaging learning."],
-  ["IIT Foundation", "An early foundation for competitive exams from Grade 6 onwards."],
   ["Sports & Games", "Cricket, athletics and outdoor games on our school playground."],
   ["Music & Dance", "Annual Day, cultural programmes and stage performances for every child."],
 ];

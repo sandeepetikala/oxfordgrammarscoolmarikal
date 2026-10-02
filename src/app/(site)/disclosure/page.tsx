@@ -166,13 +166,19 @@ export default function DisclosurePage() {
                 <tbody>
                   <Row label="Principal" value="1" />
                   <Row label="Total No. of Teachers" value={c["disc.totalTeachers"]} />
+                  {/* PGT row hidden for now (school runs up to Class VIII). Uncomment to show again.
                   <Row label="PGT (Post Graduate Teachers)" value={c["disc.pgt"]} />
+                  */}
                   <Row label="TGT (Trained Graduate Teachers)" value={c["disc.tgt"]} />
                   <Row label="PRT (Primary Teachers)" value={c["disc.prt"]} />
+                  <Row label="NTT (Nursery Trained Teachers)" value={c["disc.ntt"]} />
                   <Row label="PET (Physical Education Teacher)" value={c["disc.pet"]} />
                   <Row label="Special Educator" value={c["disc.specialEducator"]} />
                   <Row label="Counsellor & Wellness Teacher" value={c["disc.counsellor"]} />
+                  <Row label="Librarian" value={c["disc.librarian"]} />
+                  {/* Teacher-Student Ratio row hidden for now. Uncomment to show again.
                   <Row label="Teacher–Student Ratio" value={c["disc.ratio"]} />
+                  */}
                 </tbody>
               </table>
             </div>

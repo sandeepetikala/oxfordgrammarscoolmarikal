@@ -23,17 +23,17 @@ const DOCS = [
 ];
 
 const FEES = [
-  { c: "Nursery", a: "1,500", t: "22,000", iit: "—" },
-  { c: "LKG", a: "1,500", t: "23,000", iit: "—" },
-  { c: "UKG", a: "1,500", t: "24,000", iit: "—" },
-  { c: "Grade 1", a: "1,500", t: "25,000", iit: "—" },
-  { c: "Grade 2", a: "1,500", t: "28,000", iit: "—" },
-  { c: "Grade 3", a: "1,500", t: "31,000", iit: "—" },
-  { c: "Grade 4", a: "1,500", t: "34,000", iit: "—" },
-  { c: "Grade 5", a: "1,500", t: "37,000", iit: "—" },
-  { c: "Grade 6", a: "1,500", t: "41,000", iit: "15,000" },
-  { c: "Grade 7", a: "1,500", t: "45,000", iit: "15,000" },
-  { c: "Grade 8", a: "1,500", t: "50,000", iit: "15,000" },
+  { c: "Nursery", a: "1,500", t: "22,000" },
+  { c: "LKG", a: "1,500", t: "23,000" },
+  { c: "UKG", a: "1,500", t: "24,000" },
+  { c: "Grade 1", a: "1,500", t: "25,000" },
+  { c: "Grade 2", a: "1,500", t: "28,000" },
+  { c: "Grade 3", a: "1,500", t: "31,000" },
+  { c: "Grade 4", a: "1,500", t: "34,000" },
+  { c: "Grade 5", a: "1,500", t: "37,000" },
+  { c: "Grade 6", a: "1,500", t: "41,000" },
+  { c: "Grade 7", a: "1,500", t: "45,000" },
+  { c: "Grade 8", a: "1,500", t: "50,000" },
 ];
 
 export default function AdmissionsPage() {
@@ -99,13 +99,12 @@ export default function AdmissionsPage() {
             </a>
           </Reveal>
           <Reveal delay={0.1} className="mt-8 overflow-x-auto rounded-2xl border border-ink/10 shadow-soft">
-            <table className="w-full min-w-[560px] text-left text-sm">
+            <table className="w-full min-w-[440px] text-left text-sm">
               <thead className="bg-ink-950 text-cream">
                 <tr>
                   <th className="px-5 py-4 font-semibold">Class</th>
                   <th className="px-5 py-4 font-semibold">Admission Fee (₹)</th>
                   <th className="px-5 py-4 font-semibold">Tuition Fee (₹)</th>
-                  <th className="px-5 py-4 font-semibold">IIT Foundation (₹)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-ink/10 bg-white text-ink/70">
@@ -114,14 +113,13 @@ export default function AdmissionsPage() {
                     <td className="px-5 py-3 font-semibold text-ink">{f.c}</td>
                     <td className="px-5 py-3">₹ {f.a}</td>
                     <td className="px-5 py-3">₹ {f.t}</td>
-                    <td className="px-5 py-3">{f.iit === "—" ? "—" : `₹ ${f.iit}`}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </Reveal>
           <p className="mt-4 text-xs text-ink/50">
-            Fees are for the academic year 2026–27 and are subject to revision. IIT Foundation applies to Grades 6–8.
+            Fees are for the academic year 2026–27 and are subject to revision.
             For the latest details, please contact the school office or{" "}
             <a href="/fee-structure-2026-27.pdf" target="_blank" rel="noopener" className="text-gold underline">download the fee structure</a>.
           </p>

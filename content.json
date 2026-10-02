@@ -27,39 +27,44 @@
     "principal.photo": "/principal.jpeg",
     "contact.address": "Raichur Road, Marikal (Village & Mandal), Narayanpet District, Telangana 509351",
     "contact.phone": "+91 94905 02838, +91 95533 40707",
-    "contact.email": "oxfordgrammarschoolcbsemarikal@gmail.com",
+    "contact.email": "oxfordgrammarschoolmarikal@gmail.com",
     "contact.mapUrl": "https://www.google.com/maps?q=Oxford+Grammar+School+CBSE+Marikal+Narayanpet&output=embed",
     "forms.accessKey": "209fe620-d225-40c2-a4f0-c59f3463ce87",
     "social.instagram": "https://www.instagram.com/oxfordgrammarcbseschoolmarikal",
     "social.facebook": "",
-    "social.youtube": "https://youtube.com/@oxfordgrammarschoolcbsemarikal",
+    "social.youtube": "https://youtube.com/@oxfordgrammarschoolmarikal?si=Kzt9c7aA6L855a-g",
     "disc.affiliationNo": "",
     "disc.schoolCode": "6598/B1/pvt/2023",
     "disc.affiliationValid": "",
     "disc.trustName": "Marikal Educational Society",
     "disc.principalName": "Suvarna Raju N",
     "disc.principalQual": "M.A., B.Ed.",
-    "disc.email": "oxfordgrammarschoolcbsemarikal@gmail.com",
+    "disc.email": "oxfordgrammarschoolmarikal@gmail.com",
     "disc.phone": "+91 94905 02838",
     "disc.address": "Raichur Road, Marikal (Village & Mandal), Narayanpet District, Telangana 509351",
     "disc.totalArea": "8,149.19",
     "disc.builtArea": "1,767.70",
     "disc.playground": "6,381.49",
-    "disc.classrooms": "",
-    "disc.labs": "4 — Science, Maths & Computer labs (600 sq. ft. each)",
+    "disc.classrooms": "17 (550 sq. ft. each)",
+    "disc.labs": "4 — Science, Maths & Computer labs (650 sq. ft. each)",
     "disc.libraryBooks": "3,000 (library area 1,200 sq. ft.)",
     "disc.internet": "Yes",
     "disc.totalTeachers": "21",
-    "disc.pgt": "6",
-    "disc.tgt": "6",
+    "disc.pgt": "0",
+    "disc.ntt": "4",
+    "disc.librarian": "1",
+    "disc.tgt": "5",
     "disc.prt": "8",
     "disc.pet": "1",
-    "disc.ratio": "",
+    "disc.specialEducator": "1",
+    "disc.counsellor": "1",
+    "disc.ratio": "1:20",
     "disc.girlsToilets": "20",
     "disc.boysToilets": "15",
-    "disc.inspectionVideo": "https://youtube.com/@oxfordgrammarschoolcbsemarikal?si=n_LDWcV8OeDqXF-d",
+    "disc.inspectionVideo": "https://youtu.be/fNXKEzYgVsU?si=oNz-mWp9m2ZNhv9Q",
     "disc.smcUrl": "/smc-members-list.pdf",
-    "disc.ptaUrl": "/pta-members-list.pdf"
+    "disc.ptaUrl": "/pta-members-list.pdf",
+    "disc.academicCalendarUrl": "/academic-calendar-2026-27.pdf"
   },
   "gallery": [
     {
@@ -320,8 +325,8 @@
     },
     {
       "label": "Copy of recognition certificate under RTE Act, 2009",
-      "fileUrl": null,
-      "note": "Available on request at the school office",
+      "fileUrl": "/recognition-certificate.pdf",
+      "note": "Recognition order issued by the District Educational Officer",
       "sort": 3
     },
     {
@@ -337,9 +342,9 @@
       "sort": 5
     },
     {
-      "label": "Copy of the DEO certificate submitted by the school for affiliation/upgradation/extension",
-      "fileUrl": "/school-permission-copy.pdf",
-      "note": "DEO-signed school permission copy",
+      "label": "Self Certificate",
+      "fileUrl": "/self-certification.pdf",
+      "note": "",
       "sort": 6
     },
     {
@@ -347,6 +352,18 @@
       "fileUrl": "/water-health-sanitation-certificate.pdf",
       "note": "Available on request at the school office",
       "sort": 7
+    },
+    {
+      "label": "Architect Certificate",
+      "fileUrl": "/architect-certificate.pdf",
+      "note": "",
+      "sort": 8
+    },
+    {
+      "label": "Water Test Report",
+      "fileUrl": "/water-test-report.pdf",
+      "note": "",
+      "sort": 9
     }
   ]
 }

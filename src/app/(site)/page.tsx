@@ -14,20 +14,20 @@ const PILLARS = [
   { icon: "🎨", tint: "bg-amber-soft", grad: "from-amber-soft/70", t: "Art & sport for all", d: "Music, dance, cricket, athletics — talent grows outside the textbook too." },
   { icon: "🛡️", tint: "bg-sky", grad: "from-sky/70", t: "A safe, caring campus", d: "Secure premises and attentive staff who know every child by name — a place parents trust." },
   { icon: "🤝", tint: "bg-coral-soft", grad: "from-coral-soft/70", t: "Values that last", d: "Honesty, empathy and grit — lived every day, not just preached at assembly." },
-  { icon: "🎓", tint: "bg-leaf-soft", grad: "from-leaf-soft/70", t: "Foundations for the future", d: "Strong academics with an IIT foundation — future-ready skills for every child." },
+  { icon: "🎓", tint: "bg-leaf-soft", grad: "from-leaf-soft/70", t: "Foundations for the future", d: "Strong academics and future-ready skills for every child." },
 ];
 
 const JOURNEY = [
   { no: "01", tint: "bg-coral text-white", name: "Pre-Primary", grade: "Nursery – UKG", desc: "Play, phonics and wonder — confident, joyful early learners." },
   { no: "02", tint: "bg-amber text-white", name: "Primary", grade: "Grade 1 – 5", desc: "Strong foundations in reading, numeracy, science and languages." },
-  { no: "03", tint: "bg-leaf text-white", name: "Middle School", grade: "Grade 6 – 8", desc: "Deeper concepts with science, maths, computers and IIT foundation." },
+  { no: "03", tint: "bg-leaf text-white", name: "Middle School", grade: "Grade 6 – 8", desc: "Deeper concepts with science, maths and computers." },
 ];
 
 const HIGHLIGHTS = [
   { icon: "🔬", label: "Science Labs", grad: "from-leaf-soft", href: "/gallery/?category=Labs" },
   { icon: "💻", label: "Computer Lab", grad: "from-sky", href: "/gallery/?category=Labs" },
   { icon: "📚", label: "Library", grad: "from-amber-soft", href: "/gallery/?category=Library" },
-  { icon: "🎯", label: "IIT Foundation", grad: "from-coral-soft", href: "/academics" },
+  { icon: "🏏", label: "Sports & Games", grad: "from-coral-soft", href: "/gallery/?category=Activities" },
   { icon: "🖥️", label: "Smart Classrooms", grad: "from-mint", href: "/gallery/?category=Classrooms" },
   { icon: "🛡️", label: "Safe Campus", grad: "from-gold-soft", href: "/about" },
 ];
